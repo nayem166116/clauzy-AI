@@ -1,0 +1,86 @@
+/* ============================================================
+   Clauzy — motion.css
+   Motion tokens live in tokens.css. Only transform/opacity
+   (plus clip-path/scale) animate. Reduced-motion safe.
+   ============================================================ */
+
+/* ---------- Page enter / exit ---------- */
+@keyframes page-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: none; }
+}
+body { animation: page-in var(--dur-comp) var(--ease-out-premium) both; }
+body.is-exiting { opacity: 0; transform: translateY(-6px); transition: opacity var(--dur-page) var(--ease-in-premium), transform var(--dur-page) var(--ease-in-premium); }
+
+/* ---------- Reveal variants (JS adds .is-in) ---------- */
+[data-reveal] { will-change: transform, opacity; }
+
+[data-reveal="mask"] { opacity: 0; clip-path: inset(0 0 100% 0); transform: translateY(10px); transition: opacity var(--dur-slow) var(--ease-out-premium), clip-path var(--dur-slow) var(--ease-out-premium), transform var(--dur-slow) var(--ease-out-premium); }
+[data-reveal="mask"].is-in { opacity: 1; clip-path: inset(0 0 0 0); transform: none; }
+
+[data-reveal="rule"] { transform: scaleX(0); transform-origin: left; transition: transform var(--dur-slow) var(--ease-out-premium); }
+[data-reveal="rule"].is-in { transform: scaleX(1); }
+
+[data-reveal="column"] { opacity: 0; transform: translateX(-14px); transition: opacity var(--dur-comp) var(--ease-out-premium), transform var(--dur-comp) var(--ease-out-premium); }
+[data-reveal="column"].is-in { opacity: 1; transform: none; }
+
+[data-reveal="wipe"] { opacity: 0; clip-path: inset(0 100% 0 0); transition: opacity var(--dur-fast) linear, clip-path var(--dur-slow) var(--ease-out-premium); }
+[data-reveal="wipe"].is-in { opacity: 1; clip-path: inset(0 0 0 0); }
+
+[data-reveal="settle"] { opacity: 0; transform: translateY(12px) scale(.995); transition: opacity var(--dur-comp) var(--ease-out-premium), transform var(--dur-comp) var(--ease-out-premium); }
+[data-reveal="settle"].is-in { opacity: 1; transform: none; }
+
+/* ---------- Signature moment: the redline draw ---------- */
+.ledger.is-live .redline::after { animation: redline-draw 700ms var(--ease-out-premium) 520ms forwards; }
+.ledger.is-live .ledger__insert { opacity: 0; animation: insert-in var(--dur-comp) var(--ease-out-premium) 1180ms forwards; }
+.ledger.is-live .ledger__row { opacity: 0; animation: row-in var(--dur-comp) var(--ease-out-premium) forwards; }
+.ledger.is-live .ledger__row:nth-child(1) { animation-delay: 60ms; }
+.ledger.is-live .ledger__row:nth-child(2) { animation-delay: 150ms; }
+.ledger.is-live .ledger__row:nth-child(3) { animation-delay: 240ms; }
+.ledger.is-live .ledger__row:nth-child(4) { animation-delay: 330ms; }
+.ledger.is-live .ledger__row:nth-child(5) { animation-delay: 420ms; }
+.ledger.is-live .ledger__tick { transform: scale(0); animation: tick-in var(--dur-fast) var(--ease-overshoot) forwards; animation-delay: 900ms; }
+
+@keyframes redline-draw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes insert-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+@keyframes row-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes tick-in { to { transform: scale(1); } }
+
+/* ---------- Utility keyframes ---------- */
+@keyframes shimmer { to { transform: translateX(100%); } }
+@keyframes indeterminate {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(250%); }
+}
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  20% { transform: translateX(-5px); }
+  40% { transform: translateX(5px); }
+  60% { transform: translateX(-3px); }
+  80% { transform: translateX(3px); }
+}
+.is-shaking { animation: shake 320ms var(--ease-standard); }
+
+@keyframes result-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.tool__result { animation: result-in var(--dur-comp) var(--ease-out-premium) both; }
+.tool__result .finding { opacity: 0; animation: result-in var(--dur-comp) var(--ease-out-premium) forwards; }
+.tool__result .finding:nth-child(1) { animation-delay: 90ms; }
+.tool__result .finding:nth-child(2) { animation-delay: 180ms; }
+.tool__result .finding:nth-child(3) { animation-delay: 270ms; }
+.tool__result .finding:nth-child(4) { animation-delay: 360ms; }
+.tool__result .finding:nth-child(5) { animation-delay: 450ms; }
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+  [data-reveal] { opacity: 1 !important; clip-path: none !important; transform: none !important; }
+  .ledger.is-live .ledger__row, .ledger.is-live .ledger__insert, .ledger.is-live .ledger__tick { opacity: 1; transform: none; }
+  .redline::after { transform: scaleX(1) !important; }
+  .tool__result .finding { opacity: 1; }
+}
