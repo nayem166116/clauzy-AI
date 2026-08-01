@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clauzy — AI contract review, clause by clause</title>
+<meta name="description" content="Clauzy reviews inbound contracts clause by clause, scores every risk against your playbook and returns a tracked-changes redline in minutes. Free clause analyzer, no account needed.">
+<link rel="canonical" href="https://clauzyai.com">
+<meta name="theme-color" content="#362F4F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Clauzy">
+<meta property="og:title" content="Clauzy — AI contract review, clause by clause">
+<meta property="og:description" content="Clauzy reviews inbound contracts clause by clause, scores every risk against your playbook and returns a tracked-changes redline in minutes. Free clause analyzer, no account needed.">
+<meta property="og:url" content="https://clauzyai.com">
+<meta property="og:image" content="https://clauzyai.com/public/logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Clauzy — AI contract review, clause by clause">
+<meta name="twitter:description" content="Clauzy reviews inbound contracts clause by clause, scores every risk against your playbook and returns a tracked-changes redline in minutes. Free clause analyzer, no account needed.">
+<meta name="twitter:image" content="https://clauzyai.com/public/logo.png">
+<link rel="icon" href="/public/icon.png" type="image/png">
+<link rel="apple-touch-icon" href="/public/icon.png">
+<link rel="stylesheet" href="/assets/css/tokens.css">
+<link rel="stylesheet" href="/assets/css/base.css">
+<link rel="stylesheet" href="/assets/css/components.css">
+<link rel="stylesheet" href="/assets/css/pages.css">
+<link rel="stylesheet" href="/assets/css/motion.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" id="progress" aria-hidden="true"><span></span></div>
+<header class="masthead" id="masthead">
+  <div class="masthead__utility">
+    <div class="wrap masthead__utility-in">
+      <p class="masthead__note">Clause-level contract review for teams that redline every day</p>
+      <div class="masthead__acts">
+        <a class="link-underline" href="/login">Log in</a>
+        <a class="btn btn--primary btn--sm" href="/register"><span class="btn__label">Start free trial</span><span class="btn__icon"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></a>
+      </div>
+    </div>
+  </div>
+  <div class="masthead__bar">
+    <div class="wrap masthead__bar-in">
+      <a class="brand" href="/" data-nav-link><img src="/public/logo.png" alt="Clauzy" width="124" height="28"></a>
+      <nav class="index-nav" aria-label="Primary">
+        <ul class="index-nav__list">
+          <li class="index-nav__item"><a href="/features" data-nav-link><span class="num">01</span><span>Features</span></a></li>
+          <li class="index-nav__item"><a href="/pricing" data-nav-link><span class="num">02</span><span>Pricing</span></a></li>
+          <li class="index-nav__item"><a href="/use-cases" data-nav-link><span class="num">03</span><span>Use cases</span></a></li>
+          <li class="index-nav__item"><a href="/tool" data-nav-link><span class="num">04</span><span>Free analyzer</span></a></li>
+          <li class="index-nav__item"><a href="/blog" data-nav-link><span class="num">05</span><span>Field notes</span></a></li>
+          <li class="index-nav__item"><a href="/about" data-nav-link><span class="num">06</span><span>About</span></a></li>
+        </ul>
+      </nav>
+      <button class="menu-btn" id="menuOpen" type="button" aria-expanded="false" aria-controls="overlayMenu"><i class="fa-solid fa-bars" aria-hidden="true"></i> Index</button>
+    </div>
+  </div>
+</header>
+<div class="overlay-menu" id="overlayMenu" hidden>
+  <div class="wrap overlay-menu__top">
+    <img src="/public/logo.png" alt="Clauzy" width="124" height="28">
+    <button class="overlay-menu__close" id="menuClose" type="button"><i class="fa-solid fa-xmark" aria-hidden="true"></i> Close</button>
+  </div>
+  <nav class="wrap overlay-menu__list" aria-label="Site index">
+    <ul>
+      <li><a href="/features" data-nav-link><span class="num">01</span> Features</a></li>
+      <li><a href="/pricing" data-nav-link><span class="num">02</span> Pricing</a></li>
+      <li><a href="/use-cases" data-nav-link><span class="num">03</span> Use cases</a></li>
+      <li><a href="/tool" data-nav-link><span class="num">04</span> Free analyzer</a></li>
+      <li><a href="/blog" data-nav-link><span class="num">05</span> Field notes</a></li>
+      <li><a href="/about" data-nav-link><span class="num">06</span> About</a></li>
+      <li><a href="/faq" data-nav-link><span class="num">07</span> FAQ</a></li>
+      <li><a href="/contact" data-nav-link><span class="num">08</span> Contact</a></li>
+    </ul>
+  </nav>
+  <div class="wrap overlay-menu__foot">
+    <a class="btn btn--tertiary" href="/login"><span class="btn__label">Log in</span><span class="btn__icon"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></a>
+    <a class="btn btn--primary" href="/register"><span class="btn__label">Start free trial</span><span class="btn__icon"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></a>
+  </div>
+</div>
+<main id="main">
+  <section class="hero">
+    <div class="wrap hero__grid">
+      <div>
+        <p class="hero__eyebrow"><span class="mono mono--acid">Clause 01</span> <span class="mono">Scope of review</span></p>
+        <h1 class="hero__title" data-reveal="mask">Every clause read.<br>Every risk <em>numbered</em>.</h1>
+        <p class="hero__body" data-reveal="mask" data-reveal-step="1">Clauzy reviews inbound contracts clause by clause, scores each one against your playbook, and hands back a redline your counterparty can accept. No summarising. No guessing. A numbered ledger of exactly what changed and why.</p>
+        <div class="hero__acts" data-reveal="mask" data-reveal-step="2">
+          <a class="btn btn--primary btn--lg" href="/register"><span class="btn__label">Start free trial</span><span class="btn__icon"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></a>
+          <a class="btn btn--tertiary btn--lg" href="/tool"><span class="btn__label">Analyse a clause free</span><span class="btn__icon"><i class="fa-solid fa-file-contract" aria-hidden="true"></i></span></a>
+        </div>
+        <dl class="hero__meta">
+          <div><dt>Turnaround</dt><dd>First-pass markup on a 40-page MSA in under four minutes.</dd></div>
+          <div><dt>Playbook native</dt><dd>Your fallback positions, not a generic legal opinion.</dd></div>
+          <div><dt>Traceable</dt><dd>Every suggestion cites the clause and the rule it came from.</dd></div>
+        </dl>
+      </div>
+      <div class="ledger" data-ledger>
+        <div class="ledger__head">
+          <span class="ledger__doc"><i class="fa-solid fa-file-contract" aria-hidden="true"></i> MSA_Northbridge_v4.docx</span>
+          <span class="mono">Ledger</span>
+        </div>
+        <div class="ledger__row ledger__row--flagged">
+          <span class="ledger__no">8.1</span>
+          <p class="ledger__text"><b>Indemnity.</b> Supplier shall indemnify Customer <span class="redline">without limitation as to amount</span> <span class="ledger__insert">up to 2&times; fees paid in the prior 12 months</span>.</p>
+          <span class="ledger__sev"><i class="ledger__tick ledger__tick--high"></i> High</span>
+        </div>
+        <div class="ledger__row">
+          <span class="ledger__no">9.4</span>
+          <p class="ledger__text"><b>Liability cap.</b> Six months of fees sits below your floor of twelve months.</p>
+          <span class="ledger__sev"><i class="ledger__tick ledger__tick--high"></i> High</span>
+        </div>
+        <div class="ledger__row">
+          <span class="ledger__no">12.2</span>
+          <p class="ledger__text"><b>Auto-renewal.</b> 90-day non-renewal window exceeds the 30 days your playbook allows.</p>
+          <span class="ledger__sev"><i class="ledger__tick ledger__tick--med"></i> Medium</span>
+        </div>
+        <div class="ledger__row">
+          <span class="ledger__no">14.6</span>
+          <p class="ledger__text"><b>Governing law.</b> Matches the approved fallback. No change requested.</p>
+          <span class="ledger__sev"><i class="ledger__tick ledger__tick--low"></i> Clear</span>
+        </div>
+        <div class="ledger__foot">
+          <span class="mono">62 clauses &middot; 11 flagged &middot; 3 blocking</span>
+          <span class="tag tag--ultra">Redline ready</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap band__in">
+      <p class="band__statement" data-reveal="wipe">A contract is not prose to be summarised. It is a <mark>numbered instrument</mark> where a single unqualified sentence can outlive the deal it was written for.</p>
+      <p class="band__note" data-reveal="settle" data-reveal-step="1">So Clauzy works the way a reviewer does: clause by clause, in order, against a written standard — and it shows its work every time it proposes an edit.</p>
+    </div>
+  </section>
+
+  <section class="section" id="capabilities">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-head__label mono">02 / Capability</p>
+        <div class="sec-head__body">
+          <h2>What the review actually produces</h2>
+          <p>Four outputs, delivered on every document. Nothing here needs a human to reformat it before it goes back to the other side.</p>
+        </div>
+      </div>
+      <ul class="rows" style="margin-top: var(--s-7)">
+        <li class="rows__item" data-reveal="column">
+          <div class="rows__body">
+            <span class="rows__no">01</span>
+            <div><h3 class="rows__title">Clause segmentation</h3><p class="rows__meta"><span class="tag">DOCX &middot; PDF &middot; scanned</span></p></div>
+            <div class="rows__desc"><p>Clauzy splits the document into numbered clauses and sub-clauses, keeps cross-references intact, and reads defined terms as a graph rather than as loose capitalised words. Schedules and annexes are treated as part of the same instrument.</p></div>
+            <span class="rows__cue"></span>
+          </div>
+        </li>
+        <li class="rows__item" data-reveal="column" data-reveal-step="1">
+          <div class="rows__body">
+            <span class="rows__no">02</span>
+            <div><h3 class="rows__title">Playbook scoring</h3><p class="rows__meta"><span class="tag tag--acid">Your positions</span></p></div>
+            <div class="rows__desc"><p>Each clause is scored against your preferred position, your fallback, and your walk-away. A clause that is merely unusual is flagged differently from one that breaches a hard rule your general counsel set.</p></div>
+            <span class="rows__cue"></span>
+          </div>
+        </li>
+        <li class="rows__item" data-reveal="column" data-reveal-step="2">
+          <div class="rows__body">
+            <span class="rows__no">03</span>
+            <div><h3 class="rows__title">Drafted redlines</h3><p class="rows__meta"><span class="tag tag--signal">Tracked changes</span></p></div>
+            <div class="rows__desc"><p>Suggestions arrive as clause-level replacement text in your own drafting voice, exported as native tracked changes with a comment explaining the rationale and the rule reference behind it.</p></div>
+            <span class="rows__cue"></span>
+          </div>
+        </li>
+        <li class="rows__item" data-reveal="column" data-reveal-step="3">
+          <div class="rows__body">
+            <span class="rows__no">04</span>
+            <div><h3 class="rows__title">Negotiation memo</h3><p class="rows__meta"><span class="tag">One page</span></p></div>
+            <div class="rows__desc"><p>A short internal note ranking what is blocking, what is worth trading, and what to concede first — so the person on the call knows the order of the argument before it starts.</p></div>
+            <span class="rows__cue"></span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--paper ruled-top">
+    <div class="wrap sticky-split">
+      <div class="sticky-split__aside">
+        <p class="sec-head__label mono" style="display:inline-block">03 / Method</p>
+        <h2 style="margin-top: var(--s-4)">From inbox to countersigned</h2>
+        <p class="lead" style="margin-top: var(--s-3); font-size: var(--fs-sm)">The whole loop runs inside the tools your team already uses. There is no separate place to check.</p>
+        <div class="btn-row" style="margin-top: var(--s-5)">
+          <a class="btn btn--secondary" href="/register"><span class="btn__label">Start free trial</span><span class="btn__icon"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></a>
+        </div>
+      </div>
+      <ol class="steps">
+        <li class="step" data-reveal="settle">
+          <span class="step__no">01</span>
+          <div>
+            <h3>The document arrives</h3>
+            <p>Forward the contract to your review address, drop it in the shared folder Clauzy watches, or send it straight from Word. Scanned PDFs are put through layout-aware OCR before segmentation.</p>
+            <p class="step__detail"><span class="tag">Word add-in</span><span class="tag">Email intake</span><span class="tag">Drive &amp; SharePoint</span></p>
+          </div>
+        </li>
+        <li class="step" data-reveal="settle" data-reveal-step="1">
+          <span class="step__no">02</span>
+          <div>
+            <h3>Clauses are read in order</h3>
+            <p>Clauzy builds the clause tree, resolves defined terms and cross-references, then scores each clause against the playbook that applies to that counterparty type, region and contract value.</p>
+            <p class="step__detail"><span class="tag">62 clause types</span><span class="tag">Defined-term graph</span></p>
+          </div>
+        </li>
+        <li class="step" data-reveal="settle" data-reveal-step="2">
+          <span class="step__no">03</span>
+          <div>
+            <h3>The ledger comes back</h3>
+            <p>You get the numbered ledger, the drafted redline, and the negotiation memo. Everything is attributable: hover any suggestion and you see the clause it came from and the rule that triggered it.</p>
+            <p class="step__detail"><span class="tag tag--acid">Under 4 minutes</span><span class="tag">Rule citations</span></p>
+          </div>
+        </li>
+        <li class="step" data-reveal="settle" data-reveal-step="3">
+          <span class="step__no">04</span>
+          <div>
+            <h3>A human decides</h3>
+            <p>Accept, reject or rewrite each suggestion. Clauzy records what your team overrode and how often, then proposes playbook amendments when a fallback is being abandoned in practice.</p>
+            <p class="step__detail"><span class="tag">Approval routing</span><span class="tag">Override analytics</span></p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section ruled-top">
+    <div class="wrap overlap">
+      <div class="overlap__copy" data-reveal="settle">
+        <p class="mono">04 / Open access</p>
+        <h2 style="margin-top: var(--s-3)">Try one clause. No account.</h2>
+        <p>Paste an indemnity, a liability cap, a renewal term or a data-processing clause into the public analyzer and get a severity-ranked read with suggested redline language. It runs in the browser, it is free, and it does not ask who you are.</p>
+        <div class="btn-row" style="margin-top: var(--s-5)">
+          <a class="btn btn--primary" href="/tool"><span class="btn__label">Open the analyzer</span><span class="btn__icon"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></a>
+        </div>
+      </div>
+      <div class="overlap__panel" data-reveal="wipe" data-reveal-step="1">
+        <p class="mono">Sample output · severity ladder</p>
+        <div class="rows" style="margin-top: var(--s-4); border-top-color: var(--rule-strong)">
+          <div class="rows__item" style="display:flex; gap:16px; padding-block:14px; align-items:baseline">
+            <i class="ledger__tick ledger__tick--high" style="margin-top:5px"></i>
+            <div><b>High</b> <span style="color:var(--text-muted); font-size:var(--fs-sm)">&mdash; breaches a hard rule. Do not sign without an amendment.</span></div>
+          </div>
+          <div class="rows__item" style="display:flex; gap:16px; padding-block:14px; align-items:baseline">
+            <i class="ledger__tick ledger__tick--med" style="margin-top:5px"></i>
+            <div><b>Medium</b> <span style="color:var(--text-muted); font-size:var(--fs-sm)">&mdash; outside the preferred position, tradeable for value elsewhere.</span></div>
+          </div>
+          <div class="rows__item" style="display:flex; gap:16px; padding-block:14px; align-items:baseline; border-bottom:0">
+            <i class="ledger__tick ledger__tick--low" style="margin-top:5px"></i>
+            <div><b>Low</b> <span style="color:var(--text-muted); font-size:var(--fs-sm)">&mdash; drafting hygiene. Fix it if the document is being reopened anyway.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--surface ruled-top">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-head__label mono">05 / Evidence</p>
+        <div class="sec-head__body">
+          <h2>What changed for the teams using it</h2>
+          <p>Three accounts, in their own words, on what the review loop replaced.</p>
+        </div>
+      </div>
+      <div class="evidence" style="margin-top: var(--s-7)">
+        <article class="evidence__item" data-reveal="column">
+          <p class="evidence__who"><b>Marta Vellinga</b>Head of Legal Operations<br>Northbridge Logistics</p>
+          <blockquote class="evidence__quote">The value was never speed. It was that two reviewers stopped returning two different answers on the same indemnity.</blockquote>
+          <p class="evidence__result"><b>Consistency</b>Playbook deviations on inbound supplier terms fell from routine to exception across a fourteen-person team.</p>
+        </article>
+        <article class="evidence__item" data-reveal="column" data-reveal-step="1">
+          <p class="evidence__who"><b>Dr. Kenji Aoyama</b>General Counsel<br>Solvent Bio</p>
+          <blockquote class="evidence__quote">It reads schedules. Most tools stop at the signature block and quietly ignore where the real obligations live.</blockquote>
+          <p class="evidence__result"><b>Coverage</b>Annex-level obligations are now reviewed on every clinical supply agreement rather than sampled.</p>
+        </article>
+        <article class="evidence__item" data-reveal="column" data-reveal-step="2">
+          <p class="evidence__who"><b>Aisha Rahman</b>Director of Procurement<br>Halden Group</p>
+          <blockquote class="evidence__quote">My team is not legally trained. The memo tells them which three points to hold and which to give away first.</blockquote>
+          <p class="evidence__result"><b>Autonomy</b>Low-value renewals close without a legal queue, and escalations arrive already annotated.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section ruled-top">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-head__label mono">06 / Commercials</p>
+        <div class="sec-head__body">
+          <h2>Priced per document, not per seat</h2>
+          <p>Reviewers should not be rationed. Invite the whole team on every plan and pay for the contracts you actually put through.</p>
+        </div>
+      </div>
+      <div class="matrix-scroll" style="margin-top: var(--s-6)">
+        <table class="matrix">
+          <caption class="visually-hidden">Summary of Clauzy plans</caption>
+          <thead>
+            <tr>
+              <th scope="col"><span class="mono">Plan</span></th>
+              <th scope="col"><span class="matrix__plan">Solo</span><p class="matrix__price">&euro;0 <span>/ month</span></p></th>
+              <th scope="col"><span class="matrix__plan">Professional</span><p class="matrix__price">&euro;149 <span>/ month</span></p></th>
+              <th scope="col"><span class="matrix__plan">Business</span><p class="matrix__price">&euro;690 <span>/ month</span></p></th>
+              <th scope="col"><span class="matrix__plan">Enterprise</span><p class="matrix__price">Quoted</p></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Documents / month</th><td>3</td><td>40</td><td>250</td><td>Unlimited</td></tr>
+            <tr><th scope="row">Seats</th><td>1</td><td>Unlimited</td><td>Unlimited</td><td>Unlimited</td></tr>
+            <tr><th scope="row">Custom playbook</th><td class="no">Standard only</td><td class="yes"><i class="fa-solid fa-check" aria-hidden="true"></i>One</td><td class="yes"><i class="fa-solid fa-check" aria-hidden="true"></i>Unlimited</td><td class="yes"><i class="fa-solid fa-check" aria-hidden="true"></i>Unlimited</td></tr>
+            <tr><th scope="row">Tracked-changes export</th><td class="no">&mdash;</td><td class="yes"><i class="fa-solid fa-check" aria-hidden="true"></i>Included</td><td class="yes"><i class="fa-solid fa-check" aria-hidden="true"></i>Included</td><td class="yes"><i class="fa-solid fa-check" aria-hidden="true"></i>Included</td></tr>
+          </tbody>
+          <tfoot>
+            <tr class="matrix__cta">
+              <td></td>
+              <td><a class="btn btn--tertiary btn--sm" href="/register"><span class="btn__label">Choose Solo</span><span class="btn__icon"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></a></td>
+              <td><a class="btn btn--primary btn--sm" href="/register"><span class="btn__label">Choose Professional</span><span class="btn__icon"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></a></td>
+              <td><a class="btn btn--tertiary btn--sm" href="/register"><span class="btn__label">Choose Business</span><span class="btn__icon"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></a></td>
+              <td><a class="btn btn--tertiary btn--sm" href="/contact"><span class="btn__label">Contact sales</span><span class="btn__icon"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></a></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+      <p class="form-note" style="margin-top: var(--s-4)"><a class="link-underline" href="/pricing">See the full feature matrix <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></p>
+    </div>
+  </section>
+
+  <section class="section section--paper ruled-top">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-head__label mono">07 / Questions</p>
+        <div class="sec-head__body"><h2>Asked before every trial</h2></div>
+      </div>
+      <div class="acc" style="margin-top: var(--s-6)">
+        <div class="acc__item">
+          <button class="acc__btn" type="button" data-acc-btn aria-expanded="false" aria-controls="home-faq-1"><span class="num">01</span><span>Is my contract used to train a model?</span><span class="acc__ind" aria-hidden="true"></span></button>
+          <div class="acc__panel" id="home-faq-1"><div class="acc__panel-in"><p>No. Customer documents are never used as training data, and there is no shared learning pool between accounts. Models run in our EU infrastructure under a zero-retention agreement, and uploaded documents are deleted on the retention schedule you set — by default thirty days after review.</p></div></div>
+        </div>
+        <div class="acc__item">
+          <button class="acc__btn" type="button" data-acc-btn aria-expanded="false" aria-controls="home-faq-2"><span class="num">02</span><span>Does it replace a lawyer?</span><span class="acc__ind" aria-hidden="true"></span></button>
+          <div class="acc__panel" id="home-faq-2"><div class="acc__panel-in"><p>It replaces the first pass, not the judgement. Clauzy produces the markup a junior reviewer would spend two hours on, with citations, so the qualified person spends their time on the three clauses that actually matter. Nothing is submitted to a counterparty without a human accepting it.</p></div></div>
+        </div>
+        <div class="acc__item">
+          <button class="acc__btn" type="button" data-acc-btn aria-expanded="false" aria-controls="home-faq-3"><span class="num">03</span><span>What if we do not have a written playbook?</span><span class="acc__ind" aria-hidden="true"></span></button>
+          <div class="acc__panel" id="home-faq-3"><div class="acc__panel-in"><p>Most teams do not. Clauzy ships with a market-standard baseline covering 62 clause types, and during onboarding it reads your last fifty signed agreements to infer the positions you have actually been accepting. You then confirm or correct each inferred rule.</p></div></div>
+        </div>
+        <div class="acc__item">
+          <button class="acc__btn" type="button" data-acc-btn aria-expanded="false" aria-controls="home-faq-4"><span class="num">04</span><span>Which languages and jurisdictions are covered?</span><span class="acc__ind" aria-hidden="true"></span></button>
+          <div class="acc__panel" id="home-faq-4"><div class="acc__panel-in"><p>English, Dutch, German, French and Spanish contract text, with jurisdiction-aware rules for England and Wales, the Netherlands, Germany, France, Ireland and Delaware. Other governing laws are reviewed against your playbook, with jurisdiction-specific enforceability commentary marked as unavailable rather than guessed.</p></div></div>
+        </div>
+      </div>
+      <p class="form-note" style="margin-top: var(--s-5)"><a class="link-underline" href="/faq">Read all questions <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></p>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap cta-band__in">
+      <div>
+        <h2>Put a real contract through it this afternoon</h2>
+        <p>Fourteen days, no card, full playbook configuration included. If the first ledger is not useful, nothing is charged and nothing is retained.</p>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn--primary btn--lg" href="/register"><span class="btn__label">Start free trial</span><span class="btn__icon"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></a>
+        <a class="btn btn--tertiary btn--lg" href="/contact"><span class="btn__label">Talk to us</span><span class="btn__icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span></a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="colophon">
+  <div class="wrap">
+    <dl class="colophon__index">
+      <dt>Product</dt>
+      <dd>
+        <div class="colophon__links">
+          <a href="/features"><span>Features</span><span class="mono">01</span></a>
+          <a href="/pricing"><span>Pricing</span><span class="mono">02</span></a>
+          <a href="/use-cases"><span>Use cases</span><span class="mono">03</span></a>
+          <a href="/tool"><span>Free clause analyzer</span><span class="mono">04</span></a>
+        </div>
+      </dd>
+    </dl>
+    <dl class="colophon__index">
+      <dt>Company</dt>
+      <dd>
+        <div class="colophon__links">
+          <a href="/about"><span>About Clauzy</span><span class="mono">05</span></a>
+          <a href="/blog"><span>Field notes</span><span class="mono">06</span></a>
+          <a href="/faq"><span>FAQ</span><span class="mono">07</span></a>
+          <a href="/contact"><span>Contact</span><span class="mono">08</span></a>
+        </div>
+      </dd>
+    </dl>
+    <dl class="colophon__index">
+      <dt>Legal</dt>
+      <dd>
+        <div class="colophon__links">
+          <a href="/privacy"><span>Privacy policy</span><span class="mono">09</span></a>
+          <a href="/terms"><span>Terms of service</span><span class="mono">10</span></a>
+          <a href="/cookies"><span>Cookie policy</span><span class="mono">11</span></a>
+          <a href="/login"><span>Log in</span><span class="mono">12</span></a>
+        </div>
+      </dd>
+    </dl>
+    <div class="colophon__slab">
+      <p class="colophon__wordmark" aria-hidden="true">CLAUZY</p>
+      <p class="mono mono--invert">Read every clause. Miss nothing.</p>
+    </div>
+    <div class="colophon__base">
+      <p>&copy; 2026 Clauze LLC &middot; 131 Continental Dr, Suite 305, Newark, DE 19713</p>
+      <nav aria-label="Legal">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/cookies">Cookies</a>
+        <button type="button" data-consent="manage">Cookie settings</button>
+      </nav>
+    </div>
+  </div>
+</footer>
+<aside class="cookie" id="cookieBanner" aria-label="Cookie consent" hidden>
+  <div class="wrap cookie__in">
+    <p class="cookie__text"><strong>We keep cookies to a minimum.</strong>Essential cookies keep this site working. Analytics and marketing cookies are optional and stay off until you allow them. Read the <a href="/cookies">cookie policy</a>.</p>
+    <div class="cookie__acts">
+      <button class="btn btn--tertiary btn--sm" type="button" data-consent="manage"><span class="btn__label">Manage preferences</span><span class="btn__icon"><i class="fa-solid fa-sliders" aria-hidden="true"></i></span></button>
+      <button class="btn btn--tertiary btn--sm" type="button" data-consent="reject"><span class="btn__label">Reject non-essential</span><span class="btn__icon"><i class="fa-solid fa-xmark" aria-hidden="true"></i></span></button>
+      <button class="btn btn--primary btn--sm" type="button" data-consent="accept"><span class="btn__label">Accept all</span><span class="btn__icon"><i class="fa-solid fa-check" aria-hidden="true"></i></span></button>
+    </div>
+  </div>
+</aside>
+<div class="modal" id="cookieModal" role="dialog" aria-modal="true" aria-labelledby="cookieModalTitle" hidden>
+  <div class="modal__scrim" data-consent="close"></div>
+  <div class="modal__panel">
+    <div class="modal__head">
+      <h3 id="cookieModalTitle">Cookie preferences</h3>
+      <button class="modal__close" type="button" data-consent="close" aria-label="Close cookie preferences"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+    </div>
+    <div class="modal__body">
+      <div class="pref">
+        <div>
+          <h4>Strictly necessary</h4>
+          <p>Required for page routing, security and remembering this choice. These cannot be switched off.</p>
+        </div>
+        <label class="switch"><input type="checkbox" checked disabled aria-label="Strictly necessary cookies, always on"><span class="switch__track"></span></label>
+      </div>
+      <div class="pref">
+        <div>
+          <h4>Analytics</h4>
+          <p>Aggregated, IP-truncated page statistics that tell us which documentation and pricing pages need work.</p>
+        </div>
+        <label class="switch"><input type="checkbox" id="prefAnalytics" aria-label="Analytics cookies"><span class="switch__track"></span></label>
+      </div>
+      <div class="pref">
+        <div>
+          <h4>Marketing</h4>
+          <p>Measures whether a campaign led to a trial. Off by default, and never used to profile named individuals.</p>
+        </div>
+        <label class="switch"><input type="checkbox" id="prefMarketing" aria-label="Marketing cookies"><span class="switch__track"></span></label>
+      </div>
+    </div>
+    <div class="modal__foot">
+      <button class="btn btn--tertiary btn--sm" type="button" data-consent="reject"><span class="btn__label">Reject non-essential</span><span class="btn__icon"><i class="fa-solid fa-xmark" aria-hidden="true"></i></span></button>
+      <button class="btn btn--secondary btn--sm" type="button" data-consent="save"><span class="btn__label">Save preferences</span><span class="btn__icon"><i class="fa-solid fa-check" aria-hidden="true"></i></span></button>
+    </div>
+  </div>
+</div>
+<script src="/assets/js/nav.js" defer></script>
+<script src="/assets/js/reveal.js" defer></script>
+<script src="/assets/js/cookie-consent.js" defer></script>
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>

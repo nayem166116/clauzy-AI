@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What AI contract review genuinely cannot do yet | Clauzy</title>
+<meta name="description" content="An honest account of the failure modes in automated contract review: context windows, defined-term drift, jurisdictional nuance and the accountability gap.">
+<link rel="canonical" href="https://clauzyai.com/blog/ai-contract-review-limits">
+<meta name="theme-color" content="#362F4F">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Clauzy">
+<meta property="og:title" content="What AI contract review genuinely cannot do yet | Clauzy">
+<meta property="og:description" content="An honest account of the failure modes in automated contract review: context windows, defined-term drift, jurisdictional nuance and the accountability gap.">
+<meta property="og:url" content="https://clauzyai.com/blog/ai-contract-review-limits">
+<meta property="og:image" content="https://clauzyai.com/public/logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What AI contract review genuinely cannot do yet | Clauzy">
+<meta name="twitter:description" content="An honest account of the failure modes in automated contract review: context windows, defined-term drift, jurisdictional nuance and the accountability gap.">
+<meta name="twitter:image" content="https://clauzyai.com/public/logo.png">
+<link rel="icon" href="/public/icon.png" type="image/png">
+<link rel="apple-touch-icon" href="/public/icon.png">
+<link rel="stylesheet" href="/assets/css/tokens.css">
+<link rel="stylesheet" href="/assets/css/base.css">
+<link rel="stylesheet" href="/assets/css/components.css">
+<link rel="stylesheet" href="/assets/css/pages.css">
+<link rel="stylesheet" href="/assets/css/motion.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" id="progress" aria-hidden="true"><span></span></div>
+<header class="masthead" id="masthead">
+  <div class="masthead__utility">
+    <div class="wrap masthead__utility-in">
+      <p class="masthead__note">Clause-level contract review for teams that redline every day</p>
+      <div class="masthead__acts">
+        <a class="link-underline" href="/login">Log in</a>
+        <a class="btn btn--primary btn--sm" href="/register"><span class="btn__label">Start free trial</span><span class="btn__icon"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></a>
+      </div>
+    </div>
+  </div>
+  <div class="masthead__bar">
+    <div class="wrap masthead__bar-in">
+      <a class="brand" href="/" data-nav-link><img src="/public/logo.png" alt="Clauzy" width="124" height="28"></a>
+      <nav class="index-nav" aria-label="Primary">
+        <ul class="index-nav__list">
+          <li class="index-nav__item"><a href="/features" data-nav-link><span class="num">01</span><span>Features</span></a></li>
+          <li class="index-nav__item"><a href="/pricing" data-nav-link><span class="num">02</span><span>Pricing</span></a></li>
+          <li class="index-nav__item"><a href="/use-cases" data-nav-link><span class="num">03</span><span>Use cases</span></a></li>
+          <li class="index-nav__item"><a href="/tool" data-nav-link><span class="num">04</span><span>Free analyzer</span></a></li>
+          <li class="index-nav__item"><a href="/blog" data-nav-link><span class="num">05</span><span>Field notes</span></a></li>
+          <li class="index-nav__item"><a href="/about" data-nav-link><span class="num">06</span><span>About</span></a></li>
+        </ul>
+      </nav>
+      <button class="menu-btn" id="menuOpen" type="button" aria-expanded="false" aria-controls="overlayMenu"><i class="fa-solid fa-bars" aria-hidden="true"></i> Index</button>
+    </div>
+  </div>
+</header>
+<div class="overlay-menu" id="overlayMenu" hidden>
+  <div class="wrap overlay-menu__top">
+    <img src="/public/logo.png" alt="Clauzy" width="124" height="28">
+    <button class="overlay-menu__close" id="menuClose" type="button"><i class="fa-solid fa-xmark" aria-hidden="true"></i> Close</button>
+  </div>
+  <nav class="wrap overlay-menu__list" aria-label="Site index">
+    <ul>
+      <li><a href="/features" data-nav-link><span class="num">01</span> Features</a></li>
+      <li><a href="/pricing" data-nav-link><span class="num">02</span> Pricing</a></li>
+      <li><a href="/use-cases" data-nav-link><span class="num">03</span> Use cases</a></li>
+      <li><a href="/tool" data-nav-link><span class="num">04</span> Free analyzer</a></li>
+      <li><a href="/blog" data-nav-link><span class="num">05</span> Field notes</a></li>
+      <li><a href="/about" data-nav-link><span class="num">06</span> About</a></li>
+      <li><a href="/faq" data-nav-link><span class="num">07</span> FAQ</a></li>
+      <li><a href="/contact" data-nav-link><span class="num">08</span> Contact</a></li>
+    </ul>
+  </nav>
+  <div class="wrap overlay-menu__foot">
+    <a class="btn btn--tertiary" href="/login"><span class="btn__label">Log in</span><span class="btn__icon"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></a>
+    <a class="btn btn--primary" href="/register"><span class="btn__label">Start free trial</span><span class="btn__icon"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></a>
+  </div>
+</div>
+<main id="main">
+  <article>
+    <section class="page-head">
+      <div class="wrap wrap--narrow">
+        <p class="page-head__crumb"><a class="mono" href="/blog">Field notes</a> <span class="mono mono--acid">/ Perspective</span></p>
+        <h1>What AI contract review genuinely cannot do yet</h1>
+        <p class="article__rail"><time datetime="2026-05-19">19 May 2026</time> <span aria-hidden="true">&middot;</span> 10 min read <span aria-hidden="true">&middot;</span> Clauzy editorial team</p>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="wrap article">
+        <aside class="article__aside">
+          <nav class="toc" aria-label="On this page">
+            <p class="toc__title">On this page</p>
+            <ol>
+        <li><a href="#why-say-this">Why a vendor should publish this</a></li>
+        <li><a href="#cross-references">Cross-references and defined terms</a></li>
+        <li><a href="#absence">Reasoning about what is absent</a></li>
+        <li><a href="#jurisdiction">Jurisdictional enforceability</a></li>
+        <li><a href="#commercial-context">Commercial context it cannot see</a></li>
+        <li><a href="#accountability">The accountability gap</a></li>
+        <li><a href="#what-follows">What follows from all this</a></li>
+            </ol>
+          </nav>
+        </aside>
+        <div class="prose">
+          <p>Every vendor in automated contract review, this one included, has a commercial incentive to describe limitations in the vaguest possible terms. The result is a market where buyers cannot distinguish between products, because every product claims to do everything and none of them says what it gets wrong.</p>
+          <p>So here is a specific account of where the technology fails today, written by people who work on it daily and would prefer customers discover these limits during a trial rather than during a dispute.</p>
+
+          <h2 id="why-say-this">Why a vendor should publish this</h2>
+          <p>A contract review tool that is trusted uniformly is dangerous. A reviewer who believes the system catches everything will stop reading, and the one clause the model misparsed will go through unexamined. Calibrated trust, where the user knows which outputs to check, produces better results than high but undifferentiated confidence. That calibration requires the vendor to be specific about failure modes.</p>
+
+          <h2 id="cross-references">Cross-references and defined terms</h2>
+          <p>Contracts are not linear documents. A liability clause in section 9 may be modified by an exclusion in schedule 4, which relies on a definition that appears only in an order form referenced by an incorporated policy. Human reviewers navigate this badly too, but they know when they are lost.</p>
+          <p>Language models degrade in a less visible way. Given a long agreement, a model will confidently analyse clause 9 while having effectively lost track of the schedule that qualifies it, and the output will read exactly as fluently as an analysis that took the schedule into account. This is why serious systems build an explicit structural representation of the document, a defined-term graph and a cross-reference map, and treat the model as a reader operating within that structure rather than as the structure itself. It reduces the failure rate substantially. It does not eliminate it, particularly where incorporation is by reference to an external URL.</p>
+
+          <h2 id="absence">Reasoning about what is absent</h2>
+          <p>The hardest question in contract review is not whether a clause is bad. It is whether a clause that should exist is missing. There is no text to flag, no anomaly to detect, only a silence that a specialist recognises and a general reader does not.</p>
+          <p>Automated systems handle this through checklists: given this contract type, these provisions should be present. That works for the standard ones, such as a data processing agreement without a sub-processor clause. It fails for the situational ones, where a provision is necessary because of something specific about this deal that appears nowhere in the document. A supply agreement that omits a change-of-control right may be fine, or it may be a serious gap because the counterparty is in the middle of a sale process. No amount of reading the contract reveals that.</p>
+
+          <h2 id="jurisdiction">Jurisdictional enforceability</h2>
+          <p>Whether a clause is enforceable depends on governing law, on mandatory local provisions that override the parties' choice, and on case law that moves. A model trained on a broad corpus will produce commentary about English law that is roughly correct, commentary about Dutch or German law that is correct in outline and unreliable in detail, and commentary about smaller jurisdictions that should not be relied on at all.</p>
+          <p>The honest engineering response is to scope the claim. State which jurisdictions carry enforceability commentary, verify those against current law with qualified lawyers on a fixed cycle, and mark everything else as reviewed against the playbook only, with enforceability explicitly not assessed. A blank is safer than a plausible sentence.</p>
+          <blockquote>The failure mode that matters in this category is not the mistake the system makes. It is the mistake it makes without indicating any uncertainty.</blockquote>
+
+          <h2 id="commercial-context">Commercial context it cannot see</h2>
+          <p>Whether a term is acceptable is a commercial question wearing legal clothing. A cap of six months of fees may be an obvious rejection for a strategic customer and an obvious acceptance for a supplier you intend to replace in a year. An aggressive audit right may be unacceptable in principle and irrelevant in practice because of who the counterparty is.</p>
+          <p>None of that is in the document. A playbook can encode some of it through conditional rules based on contract value, region and counterparty tier, and that captures a useful fraction. The residue, which includes the relationship history, the negotiating leverage and the strategic intent behind the deal, exists only in the heads of the people doing the deal, and a review tool that pretends otherwise is overreaching.</p>
+
+          <h2 id="accountability">The accountability gap</h2>
+          <p>This is the limit that will not be closed by better models. Professional responsibility for legal advice attaches to a person or a regulated firm. Software cannot hold it, cannot be insured for it in the same way, and cannot be disciplined for getting it wrong.</p>
+          <p>That is not a temporary state of the technology. It is a feature of how liability is allocated in professional services, and it means automated review will remain an input to a human decision rather than a replacement for one, however accurate it becomes. Any vendor implying otherwise is describing a product it is not permitted to sell.</p>
+
+          <h2 id="what-follows">What follows from all this</h2>
+          <p>Three practical conclusions for anyone evaluating tools in this category.</p>
+          <ol>
+            <li><strong>Ask what the system does when it is unsure.</strong> If the answer is that it always produces an answer, that is a defect described as a feature.</li>
+            <li><strong>Test on your worst documents, not your cleanest.</strong> A badly scanned PDF of a 2014 agreement with handwritten amendments tells you far more than a well-formed template.</li>
+            <li><strong>Check whether findings are attributable.</strong> If you cannot see which clause and which rule produced a suggestion, you cannot correct the system when it is wrong, and you will end up either trusting it blindly or ignoring it entirely.</li>
+          </ol>
+          <p>Used within those limits, automated review removes an enormous amount of low-value reading and makes the output of a legal team measurably more consistent. Used outside them, it produces confident text that nobody checked, which is worse than the manual process it replaced.</p>
+          <hr>
+          <p class="form-note">Clauzy publishes field notes for contract reviewers. Nothing here is legal advice; it is practitioner commentary, and your own counsel decides what applies to your agreements.</p>
+          <h2>Keep reading</h2>
+          <ul>
+            <li><a class="link-underline" href="/blog/liability-cap-negotiation">The liability cap is the only clause most teams actually negotiate</a></li>
+            <li><a class="link-underline" href="/blog/building-a-contract-playbook">How to write a contract playbook your team will actually follow</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="wrap cta-band__in">
+        <div>
+          <h2>Test a clause against this thinking</h2>
+          <p>The free analyzer returns a severity-ranked read with suggested wording. No account, nothing stored.</p>
+        </div>
+        <div class="btn-row">
+          <a class="btn btn--primary btn--lg" href="/tool"><span class="btn__label">Open the analyzer</span><span class="btn__icon"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></a>
+          <a class="btn btn--tertiary btn--lg" href="/register"><span class="btn__label">Start free trial</span><span class="btn__icon"><i class="fa-solid fa-file-contract" aria-hidden="true"></i></span></a>
+        </div>
+      </div>
+    </section>
+  </article>
+</main>
+<footer class="colophon">
+  <div class="wrap">
+    <dl class="colophon__index">
+      <dt>Product</dt>
+      <dd>
+        <div class="colophon__links">
+          <a href="/features"><span>Features</span><span class="mono">01</span></a>
+          <a href="/pricing"><span>Pricing</span><span class="mono">02</span></a>
+          <a href="/use-cases"><span>Use cases</span><span class="mono">03</span></a>
+          <a href="/tool"><span>Free clause analyzer</span><span class="mono">04</span></a>
+        </div>
+      </dd>
+    </dl>
+    <dl class="colophon__index">
+      <dt>Company</dt>
+      <dd>
+        <div class="colophon__links">
+          <a href="/about"><span>About Clauzy</span><span class="mono">05</span></a>
+          <a href="/blog"><span>Field notes</span><span class="mono">06</span></a>
+          <a href="/faq"><span>FAQ</span><span class="mono">07</span></a>
+          <a href="/contact"><span>Contact</span><span class="mono">08</span></a>
+        </div>
+      </dd>
+    </dl>
+    <dl class="colophon__index">
+      <dt>Legal</dt>
+      <dd>
+        <div class="colophon__links">
+          <a href="/privacy"><span>Privacy policy</span><span class="mono">09</span></a>
+          <a href="/terms"><span>Terms of service</span><span class="mono">10</span></a>
+          <a href="/cookies"><span>Cookie policy</span><span class="mono">11</span></a>
+          <a href="/login"><span>Log in</span><span class="mono">12</span></a>
+        </div>
+      </dd>
+    </dl>
+    <div class="colophon__slab">
+      <p class="colophon__wordmark" aria-hidden="true">CLAUZY</p>
+      <p class="mono mono--invert">Read every clause. Miss nothing.</p>
+    </div>
+    <div class="colophon__base">
+      <p>&copy; 2026 Clauze LLC &middot; 131 Continental Dr, Suite 305, Newark, DE 19713</p>
+      <nav aria-label="Legal">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/cookies">Cookies</a>
+        <button type="button" data-consent="manage">Cookie settings</button>
+      </nav>
+    </div>
+  </div>
+</footer>
+<aside class="cookie" id="cookieBanner" aria-label="Cookie consent" hidden>
+  <div class="wrap cookie__in">
+    <p class="cookie__text"><strong>We keep cookies to a minimum.</strong>Essential cookies keep this site working. Analytics and marketing cookies are optional and stay off until you allow them. Read the <a href="/cookies">cookie policy</a>.</p>
+    <div class="cookie__acts">
+      <button class="btn btn--tertiary btn--sm" type="button" data-consent="manage"><span class="btn__label">Manage preferences</span><span class="btn__icon"><i class="fa-solid fa-sliders" aria-hidden="true"></i></span></button>
+      <button class="btn btn--tertiary btn--sm" type="button" data-consent="reject"><span class="btn__label">Reject non-essential</span><span class="btn__icon"><i class="fa-solid fa-xmark" aria-hidden="true"></i></span></button>
+      <button class="btn btn--primary btn--sm" type="button" data-consent="accept"><span class="btn__label">Accept all</span><span class="btn__icon"><i class="fa-solid fa-check" aria-hidden="true"></i></span></button>
+    </div>
+  </div>
+</aside>
+<div class="modal" id="cookieModal" role="dialog" aria-modal="true" aria-labelledby="cookieModalTitle" hidden>
+  <div class="modal__scrim" data-consent="close"></div>
+  <div class="modal__panel">
+    <div class="modal__head">
+      <h3 id="cookieModalTitle">Cookie preferences</h3>
+      <button class="modal__close" type="button" data-consent="close" aria-label="Close cookie preferences"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+    </div>
+    <div class="modal__body">
+      <div class="pref">
+        <div>
+          <h4>Strictly necessary</h4>
+          <p>Required for page routing, security and remembering this choice. These cannot be switched off.</p>
+        </div>
+        <label class="switch"><input type="checkbox" checked disabled aria-label="Strictly necessary cookies, always on"><span class="switch__track"></span></label>
+      </div>
+      <div class="pref">
+        <div>
+          <h4>Analytics</h4>
+          <p>Aggregated, IP-truncated page statistics that tell us which documentation and pricing pages need work.</p>
+        </div>
+        <label class="switch"><input type="checkbox" id="prefAnalytics" aria-label="Analytics cookies"><span class="switch__track"></span></label>
+      </div>
+      <div class="pref">
+        <div>
+          <h4>Marketing</h4>
+          <p>Measures whether a campaign led to a trial. Off by default, and never used to profile named individuals.</p>
+        </div>
+        <label class="switch"><input type="checkbox" id="prefMarketing" aria-label="Marketing cookies"><span class="switch__track"></span></label>
+      </div>
+    </div>
+    <div class="modal__foot">
+      <button class="btn btn--tertiary btn--sm" type="button" data-consent="reject"><span class="btn__label">Reject non-essential</span><span class="btn__icon"><i class="fa-solid fa-xmark" aria-hidden="true"></i></span></button>
+      <button class="btn btn--secondary btn--sm" type="button" data-consent="save"><span class="btn__label">Save preferences</span><span class="btn__icon"><i class="fa-solid fa-check" aria-hidden="true"></i></span></button>
+    </div>
+  </div>
+</div>
+<script src="/assets/js/nav.js" defer></script>
+<script src="/assets/js/reveal.js" defer></script>
+<script src="/assets/js/cookie-consent.js" defer></script>
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>
