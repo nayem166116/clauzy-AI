@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free contract clause analyzer | Clauzy</title>
+<meta name="description" content="Paste one contract clause and get a severity-ranked risk read with suggested redline wording. Free, no account, nothing stored.">
+<link rel="canonical" href="https://clauzyai.com/tool">
+<meta name="theme-color" content="#362F4F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Clauzy">
+<meta property="og:title" content="Free contract clause analyzer | Clauzy">
+<meta property="og:description" content="Paste one contract clause and get a severity-ranked risk read with suggested redline wording. Free, no account, nothing stored.">
+<meta property="og:url" content="https://clauzyai.com/tool">
+<meta property="og:image" content="https://clauzyai.com/public/logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free contract clause analyzer | Clauzy">
+<meta name="twitter:description" content="Paste one contract clause and get a severity-ranked risk read with suggested redline wording. Free, no account, nothing stored.">
+<meta name="twitter:image" content="https://clauzyai.com/public/logo.png">
+<link rel="icon" href="/public/icon.png" type="image/png">
+<link rel="apple-touch-icon" href="/public/icon.png">
+<link rel="stylesheet" href="/assets/css/tokens.css">
+<link rel="stylesheet" href="/assets/css/base.css">
+<link rel="stylesheet" href="/assets/css/components.css">
+<link rel="stylesheet" href="/assets/css/pages.css">
+<link rel="stylesheet" href="/assets/css/motion.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" id="progress" aria-hidden="true"><span></span></div>
+<header class="masthead" id="masthead">
+  <div class="masthead__utility">
+    <div class="wrap masthead__utility-in">
+      <p class="masthead__note">Clause-level contract review for teams that redline every day</p>
+      <div class="masthead__acts">
+        <a class="link-underline" href="/login">Log in</a>
+        <a class="btn btn--primary btn--sm" href="/register"><span class="btn__label">Start free trial</span><span class="btn__icon"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></a>
+      </div>
+    </div>
+  </div>
+  <div class="masthead__bar">
+    <div class="wrap masthead__bar-in">
+      <a class="brand" href="/" data-nav-link><img src="/public/logo.png" alt="Clauzy" width="124" height="28"></a>
+      <nav class="index-nav" aria-label="Primary">
+        <ul class="index-nav__list">
+          <li class="index-nav__item"><a href="/features" data-nav-link><span class="num">01</span><span>Features</span></a></li>
+          <li class="index-nav__item"><a href="/pricing" data-nav-link><span class="num">02</span><span>Pricing</span></a></li>
+          <li class="index-nav__item"><a href="/use-cases" data-nav-link><span class="num">03</span><span>Use cases</span></a></li>
+          <li class="index-nav__item"><a href="/tool" data-nav-link><span class="num">04</span><span>Free analyzer</span></a></li>
+          <li class="index-nav__item"><a href="/blog" data-nav-link><span class="num">05</span><span>Field notes</span></a></li>
+          <li class="index-nav__item"><a href="/about" data-nav-link><span class="num">06</span><span>About</span></a></li>
+        </ul>
+      </nav>
+      <button class="menu-btn" id="menuOpen" type="button" aria-expanded="false" aria-controls="overlayMenu"><i class="fa-solid fa-bars" aria-hidden="true"></i> Index</button>
+    </div>
+  </div>
+</header>
+<div class="overlay-menu" id="overlayMenu" hidden>
+  <div class="wrap overlay-menu__top">
+    <img src="/public/logo.png" alt="Clauzy" width="124" height="28">
+    <button class="overlay-menu__close" id="menuClose" type="button"><i class="fa-solid fa-xmark" aria-hidden="true"></i> Close</button>
+  </div>
+  <nav class="wrap overlay-menu__list" aria-label="Site index">
+    <ul>
+      <li><a href="/features" data-nav-link><span class="num">01</span> Features</a></li>
+      <li><a href="/pricing" data-nav-link><span class="num">02</span> Pricing</a></li>
+      <li><a href="/use-cases" data-nav-link><span class="num">03</span> Use cases</a></li>
+      <li><a href="/tool" data-nav-link><span class="num">04</span> Free analyzer</a></li>
+      <li><a href="/blog" data-nav-link><span class="num">05</span> Field notes</a></li>
+      <li><a href="/about" data-nav-link><span class="num">06</span> About</a></li>
+      <li><a href="/faq" data-nav-link><span class="num">07</span> FAQ</a></li>
+      <li><a href="/contact" data-nav-link><span class="num">08</span> Contact</a></li>
+    </ul>
+  </nav>
+  <div class="wrap overlay-menu__foot">
+    <a class="btn btn--tertiary" href="/login"><span class="btn__label">Log in</span><span class="btn__icon"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></a>
+    <a class="btn btn--primary" href="/register"><span class="btn__label">Start free trial</span><span class="btn__icon"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></a>
+  </div>
+</div>
+<main id="main">
+  <section class="page-head">
+    <div class="wrap page-head__grid">
+      <div>
+        <p class="page-head__crumb"><span class="mono mono--acid">04</span> <span class="mono">Free analyzer</span></p>
+        <h1>Free clause risk analyzer</h1>
+      </div>
+      <p>Paste a single clause and get a severity-ranked read with suggested redline wording. No account, no email, nothing stored. This page shows sample analyzer output so you can judge the format before you trial the full engine.</p>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="wrap tool">
+      <form class="tool__panel" id="analyzerForm" novalidate>
+        <div class="tool__panel-head">
+          <span class="mono">Clause input</span>
+          <span class="tag tag--acid">No sign-in</span>
+        </div>
+        <div class="tool__panel-body">
+          <p class="mono" style="margin-bottom:8px">Load an example</p>
+          <div class="tool__samples">
+            <button class="chip" type="button" data-sample="indemnity"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i> Indemnity</button>
+            <button class="chip" type="button" data-sample="liability"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Liability cap</button>
+            <button class="chip" type="button" data-sample="term"><i class="fa-solid fa-rotate" aria-hidden="true"></i> Auto-renewal</button>
+            <button class="chip" type="button" data-sample="dataproc"><i class="fa-solid fa-database" aria-hidden="true"></i> Data processing</button>
+          </div>
+          <div class="field">
+            <label class="field__label" for="clauseInput">Clause text</label>
+            <textarea class="field__control" id="clauseInput" name="clause" maxlength="6000" placeholder="Paste one clause — for example an indemnity, a limitation of liability, a renewal term or a data processing provision." aria-describedby="charCount"></textarea>
+            <p class="field__hint" id="charCount">0 / 6000 characters</p>
+          </div>
+          <button class="btn btn--primary btn--block" type="submit"><span class="btn__label">Analyse clause</span><span class="btn__icon"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></span></button>
+          <p class="form-note" style="margin-top:var(--s-4)">Text is analysed in your browser for this demonstration and is never transmitted or stored. Findings are illustrative sample output, not legal advice.</p>
+        </div>
+      </form>
+
+      <div class="tool__out" id="analyzerOutput">
+        <div class="tool__empty">
+          <h3>Findings appear here</h3>
+          <p>Each finding shows the severity, the part of the clause that triggered it, and the redline wording a reviewer would send back. Load one of the examples on the left if you would rather not paste your own text.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--paper ruled-top">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-head__label mono">Scope</p>
+        <div class="sec-head__body">
+          <h2>What this page does and does not do</h2>
+          <p>The public analyzer reads one clause in isolation. The workspace reads the whole instrument, which is a materially different exercise.</p>
+        </div>
+      </div>
+      <ul class="rows" style="margin-top: var(--s-6)">
+        <li class="rows__item"><div class="rows__body">
+          <span class="rows__no">01</span>
+          <div><h3 class="rows__title">One clause, no context</h3></div>
+          <div class="rows__desc"><p>Definitions, carve-outs and cross-references living elsewhere in the agreement are invisible here. A liability cap that looks harsh may be fine once you read the exclusions in the next clause.</p></div>
+          <span class="rows__cue"></span>
+        </div></li>
+        <li class="rows__item"><div class="rows__body">
+          <span class="rows__no">02</span>
+          <div><h3 class="rows__title">Market baseline, not your playbook</h3></div>
+          <div class="rows__desc"><p>Severity here reflects a general commercial standard. In the workspace, severity reflects the positions your own general counsel signed off, which is what actually determines whether a clause is acceptable.</p></div>
+          <span class="rows__cue"></span>
+        </div></li>
+        <li class="rows__item"><div class="rows__body">
+          <span class="rows__no">03</span>
+          <div><h3 class="rows__title">Not legal advice</h3></div>
+          <div class="rows__desc"><p>Clauzy is a review tool used by qualified people, not a substitute for them. Nothing on this page creates a lawyer-client relationship, and no output should be sent to a counterparty without a human deciding it is right.</p></div>
+          <span class="rows__cue"></span>
+        </div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap cta-band__in">
+      <div>
+        <h2>Run the same review across a whole agreement</h2>
+        <p>Full-document review, playbook scoring, tracked-changes export and version comparison are in the workspace. Trials are fourteen days and need no card.</p>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn--primary btn--lg" href="/register"><span class="btn__label">Start free trial</span><span class="btn__icon"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></a>
+        <a class="btn btn--tertiary btn--lg" href="/features"><span class="btn__label">See all features</span><span class="btn__icon"><i class="fa-solid fa-list-check" aria-hidden="true"></i></span></a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="colophon">
+  <div class="wrap">
+    <dl class="colophon__index">
+      <dt>Product</dt>
+      <dd>
+        <div class="colophon__links">
+          <a href="/features"><span>Features</span><span class="mono">01</span></a>
+          <a href="/pricing"><span>Pricing</span><span class="mono">02</span></a>
+          <a href="/use-cases"><span>Use cases</span><span class="mono">03</span></a>
+          <a href="/tool"><span>Free clause analyzer</span><span class="mono">04</span></a>
+        </div>
+      </dd>
+    </dl>
+    <dl class="colophon__index">
+      <dt>Company</dt>
+      <dd>
+        <div class="colophon__links">
+          <a href="/about"><span>About Clauzy</span><span class="mono">05</span></a>
+          <a href="/blog"><span>Field notes</span><span class="mono">06</span></a>
+          <a href="/faq"><span>FAQ</span><span class="mono">07</span></a>
+          <a href="/contact"><span>Contact</span><span class="mono">08</span></a>
+        </div>
+      </dd>
+    </dl>
+    <dl class="colophon__index">
+      <dt>Legal</dt>
+      <dd>
+        <div class="colophon__links">
+          <a href="/privacy"><span>Privacy policy</span><span class="mono">09</span></a>
+          <a href="/terms"><span>Terms of service</span><span class="mono">10</span></a>
+          <a href="/cookies"><span>Cookie policy</span><span class="mono">11</span></a>
+          <a href="/login"><span>Log in</span><span class="mono">12</span></a>
+        </div>
+      </dd>
+    </dl>
+    <div class="colophon__slab">
+      <p class="colophon__wordmark" aria-hidden="true">CLAUZY</p>
+      <p class="mono mono--invert">Read every clause. Miss nothing.</p>
+    </div>
+    <div class="colophon__base">
+      <p>&copy; 2026 Clauzy Technologies B.V. &middot; Keizersgracht 62, 1015 CS Amsterdam</p>
+      <nav aria-label="Legal">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/cookies">Cookies</a>
+        <button type="button" data-consent="manage">Cookie settings</button>
+      </nav>
+    </div>
+  </div>
+</footer>
+<aside class="cookie" id="cookieBanner" aria-label="Cookie consent" hidden>
+  <div class="wrap cookie__in">
+    <p class="cookie__text"><strong>We keep cookies to a minimum.</strong>Essential cookies keep this site working. Analytics and marketing cookies are optional and stay off until you allow them. Read the <a href="/cookies">cookie policy</a>.</p>
+    <div class="cookie__acts">
+      <button class="btn btn--tertiary btn--sm" type="button" data-consent="manage"><span class="btn__label">Manage preferences</span><span class="btn__icon"><i class="fa-solid fa-sliders" aria-hidden="true"></i></span></button>
+      <button class="btn btn--tertiary btn--sm" type="button" data-consent="reject"><span class="btn__label">Reject non-essential</span><span class="btn__icon"><i class="fa-solid fa-xmark" aria-hidden="true"></i></span></button>
+      <button class="btn btn--primary btn--sm" type="button" data-consent="accept"><span class="btn__label">Accept all</span><span class="btn__icon"><i class="fa-solid fa-check" aria-hidden="true"></i></span></button>
+    </div>
+  </div>
+</aside>
+<div class="modal" id="cookieModal" role="dialog" aria-modal="true" aria-labelledby="cookieModalTitle" hidden>
+  <div class="modal__scrim" data-consent="close"></div>
+  <div class="modal__panel">
+    <div class="modal__head">
+      <h3 id="cookieModalTitle">Cookie preferences</h3>
+      <button class="modal__close" type="button" data-consent="close" aria-label="Close cookie preferences"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+    </div>
+    <div class="modal__body">
+      <div class="pref">
+        <div>
+          <h4>Strictly necessary</h4>
+          <p>Required for page routing, security and remembering this choice. These cannot be switched off.</p>
+        </div>
+        <label class="switch"><input type="checkbox" checked disabled aria-label="Strictly necessary cookies, always on"><span class="switch__track"></span></label>
+      </div>
+      <div class="pref">
+        <div>
+          <h4>Analytics</h4>
+          <p>Aggregated, IP-truncated page statistics that tell us which documentation and pricing pages need work.</p>
+        </div>
+        <label class="switch"><input type="checkbox" id="prefAnalytics" aria-label="Analytics cookies"><span class="switch__track"></span></label>
+      </div>
+      <div class="pref">
+        <div>
+          <h4>Marketing</h4>
+          <p>Measures whether a campaign led to a trial. Off by default, and never used to profile named individuals.</p>
+        </div>
+        <label class="switch"><input type="checkbox" id="prefMarketing" aria-label="Marketing cookies"><span class="switch__track"></span></label>
+      </div>
+    </div>
+    <div class="modal__foot">
+      <button class="btn btn--tertiary btn--sm" type="button" data-consent="reject"><span class="btn__label">Reject non-essential</span><span class="btn__icon"><i class="fa-solid fa-xmark" aria-hidden="true"></i></span></button>
+      <button class="btn btn--secondary btn--sm" type="button" data-consent="save"><span class="btn__label">Save preferences</span><span class="btn__icon"><i class="fa-solid fa-check" aria-hidden="true"></i></span></button>
+    </div>
+  </div>
+</div>
+<script src="/assets/js/nav.js" defer></script>
+<script src="/assets/js/reveal.js" defer></script>
+<script src="/assets/js/cookie-consent.js" defer></script>
+<script src="/assets/js/main.js" defer></script>
+<script src="/assets/js/tool.js" defer></script>
+</body>
+</html>
