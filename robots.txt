@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /loading
+
+Sitemap: https://clauzyai.com/sitemap.xml
